@@ -12,6 +12,10 @@
         <server name="KERNEL_DIR" value="app/" />
     </php>
 
+    <extensions>
+        <extension class="DAMA\DoctrineTestBundle\PHPUnit\PHPUnitExtension" />
+    </extensions>
+
     <testsuites>
         <testsuite name="Project Test Suite">
             <directory>tests</directory>
