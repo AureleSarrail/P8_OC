@@ -25,19 +25,9 @@
     <filter>
         <whitelist>
             <directory>src</directory>
-            <exclude>
-                <directory>src/*Bundle/Resources</directory>
-                <directory>src/*/*Bundle/Resources</directory>
-                <directory>src/*/Bundle/*Bundle/Resources</directory>
-            </exclude>
         </whitelist>
     </filter>
     <listeners>
-        <listener class="Symfony\Bridge\PhpUnit\CoverageListener" >
-            <arguments>
-                <null/>
-                <boolean>true</boolean>
-            </arguments>
-        </listener>
+        <listener class="Symfony\Bridge\PhpUnit\CoverageListener" />
     </listeners>
 </phpunit>
