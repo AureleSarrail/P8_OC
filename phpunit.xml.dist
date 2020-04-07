@@ -32,4 +32,12 @@
             </exclude>
         </whitelist>
     </filter>
+    <listeners>
+        <listener class="Symfony\Bridge\PhpUnit\CoverageListener" >
+            <arguments>
+                <null/>
+                <boolean>true</boolean>
+            </arguments>
+        </listener>
+    </listeners>
 </phpunit>

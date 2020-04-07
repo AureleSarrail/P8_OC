@@ -32,7 +32,8 @@
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^5.0",
-        "dama/doctrine-test-bundle": "^6.3"
+        "dama/doctrine-test-bundle": "^6.3",
+        "phpunit/php-code-coverage": "^8.0"
     },
     "scripts": {
         "symfony-scripts": [

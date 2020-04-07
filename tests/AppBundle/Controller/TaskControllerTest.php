@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\AppBundle\Controller;
+namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -29,6 +29,9 @@ class TaskControllerTest extends WebTestCase
         $this->assertSame(302, $client->getResponse()->getStatusCode());
     }
 
+    /**
+     * @covers \AppBundle\Controller\TaskController::listAction
+     */
     public function testListAction()
     {
         $client = static::createClient([], [
@@ -40,6 +43,9 @@ class TaskControllerTest extends WebTestCase
         $this->assertSame(200, $client->getResponse()->getStatusCode());
     }
 
+    /**
+     * @covers \AppBundle\Controller\TaskController::createAction
+     */
     public function testCreateAction()
     {
         $client = static::createClient([], [
@@ -59,6 +65,9 @@ class TaskControllerTest extends WebTestCase
         $this->assertSame(1, $crawler->filter('div.alert.alert-success')->count());
     }
 
+    /**
+     * @covers \AppBundle\Controller\TaskController::editAction
+     */
     public function testEditAction()
     {
         $client = static::createClient([], [
@@ -82,6 +91,9 @@ class TaskControllerTest extends WebTestCase
         $this->assertSame(1, $crawler->filter('div.alert.alert-success')->count());
     }
 
+    /**
+     * @covers \AppBundle\Controller\TaskController::toggleTaskAction
+     */
     public function testToggleTaskAction()
     {
         $client = static::createClient([], [
@@ -98,6 +110,9 @@ class TaskControllerTest extends WebTestCase
         $this->assertSame(1, $crawler->filter('div.alert.alert-success')->count());
     }
 
+    /**
+     * @covers \AppBundle\Controller\TaskController::deleteTaskAction
+     */
     public function testDeleteTaskAction()
     {
         $client = static::createClient([], [

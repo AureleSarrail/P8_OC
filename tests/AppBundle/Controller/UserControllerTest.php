@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\AppBundle\Controller;
+namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -37,6 +37,9 @@ class UserControllerTest extends WebTestCase
 //        $this->assertSame(302, $client->getResponse()->getStatusCode());
 //    }
 
+    /**
+     * @covers \AppBundle\Controller\UserController::createAction
+     */
     public function testCreateAction()
     {
         $client = static::createClient([], [
@@ -63,6 +66,9 @@ class UserControllerTest extends WebTestCase
         $this->assertSame(1, $crawler->filter('div.alert.alert-success')->count());
     }
 
+    /**
+     * @covers \AppBundle\Controller\UserController::editAction
+     */
     public function testEditAction()
     {
         $client = static::createClient([], [
