@@ -12,9 +12,9 @@ class TaskControllerTest extends WebTestCase
         return [
             ['/tasks'],
             ['/tasks/create'],
-            ['/tasks/2/edit'],
-            ['/tasks/2/toggle'],
-            ['/tasks/2/delete']
+            ['/tasks/4/edit'],
+            ['/tasks/4/toggle'],
+            ['/tasks/4/delete']
         ];
     }
 
@@ -65,7 +65,7 @@ class TaskControllerTest extends WebTestCase
             'PHP_AUTH_USER' => 'Xan',
             'PHP_AUTH_PW' => 'manson'
         ]);
-        $crawler = $client->request('GET', '/tasks/3/edit');
+        $crawler = $client->request('GET', '/tasks/4/edit');
 
         $this->assertSame(200, $client->getResponse()->getStatusCode());
 
@@ -88,7 +88,7 @@ class TaskControllerTest extends WebTestCase
             'PHP_AUTH_USER' => 'Xan',
             'PHP_AUTH_PW' => 'manson'
         ]);
-        $client->request('GET', '/tasks/3/toggle');
+        $client->request('GET', '/tasks/4/toggle');
 
         $this->assertSame(302, $client->getResponse()->getStatusCode());
 
@@ -104,7 +104,7 @@ class TaskControllerTest extends WebTestCase
             'PHP_AUTH_USER' => 'Xan',
             'PHP_AUTH_PW' => 'manson'
         ]);
-        $client->request('GET', '/tasks/3/delete');
+        $client->request('GET', '/tasks/4/delete');
 
         $this->assertSame(302, $client->getResponse()->getStatusCode());
 
