@@ -1,8 +1,9 @@
 <?php
 
-namespace AppBundle\Form;
+namespace Tests\AppBundle\Form;
 
 use AppBundle\Entity\User;
+use AppBundle\Form\UserType;
 use Symfony\Component\Form\Test\TypeTestCase;
 
 class UserTypeTest extends TypeTestCase
@@ -15,20 +16,19 @@ class UserTypeTest extends TypeTestCase
             'email' => 'test@gmail.com'
         ];
 
-        $userToCompare = new User();
+        $formData2 = [
+            'username' => 'test',
+            'password' => 'test',
+            'email' => 'test@gmail.com'
+        ];
 
-        $form = $this->factory->create(UserType::class, $userToCompare);
-
-        $user = new User();
-        $user->setUsername('test');
-        $user->setPassword('test');
-        $user->setEmail('test@gmail.com');
+        $form = $this->factory->create(UserType::class);
 
         $form->submit($formData);
 
         $this->assertTrue($form->isSynchronized());
 
-        $this->assertEquals($user->getUsername(), $userToCompare->getUsername());
+        $this->assertEquals($form->getData(), $formData2);
     }
 
 }

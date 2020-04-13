@@ -1,9 +1,10 @@
 <?php
 
 
-namespace AppBundle\Entity;
+namespace Tests\AppBundle\Entity;
 
 
+use AppBundle\Entity\User;
 use PHPUnit\Framework\TestCase;
 
 class UserTest extends TestCase

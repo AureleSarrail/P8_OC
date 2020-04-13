@@ -1,8 +1,9 @@
 <?php
 
 
-namespace AppBundle\Entity;
+namespace Tests\AppBundle\Entity;
 
+use AppBundle\Entity\Task;
 use PHPUnit\Framework\TestCase;
 
 class TaskTest extends TestCase
@@ -10,6 +11,10 @@ class TaskTest extends TestCase
     public function testGet()
     {
         $task = new Task();
+
+//        $task->setCreatedAt(new \DateTime('2011-01-01T15:03:01.012345Z'));
+
+//        $this->assertEquals('2011-01-01T15:03:01.012345Z', $task->getCreatedAt());
 
         $task->setTitle('test');
         $title = $task->getTitle();

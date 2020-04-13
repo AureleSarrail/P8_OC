@@ -1,8 +1,9 @@
 <?php
 
-namespace AppBundle\Form;
+namespace Tests\AppBundle\Form;
 
 use AppBundle\Entity\Task;
+use AppBundle\Form\TaskType;
 use Symfony\Component\Form\Test\TypeTestCase;
 
 class TaskTypeTest extends TypeTestCase
