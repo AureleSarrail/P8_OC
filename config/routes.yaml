@@ -1,0 +1,7 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::indexAction
+
+#app:
+#  resource: "../src/AppBundle/Controller/"
+#  type:     annotation
