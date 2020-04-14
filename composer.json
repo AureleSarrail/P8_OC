@@ -17,6 +17,7 @@
         "dama/doctrine-test-bundle": "^6.3",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-cache-bundle": "^1.2",
+        "doctrine/doctrine-migrations-bundle": "^2.1",
         "doctrine/orm": "^2.5",
         "incenteev/composer-parameter-handler": "^2.0",
         "sensio/framework-extra-bundle": "^5.0",
