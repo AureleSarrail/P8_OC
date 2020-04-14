@@ -29,3 +29,6 @@ services:
 
     App\DataFixtures\Processor\UserProcessor:
         tags: [{name: fidry_alice_data_fixtures.processor}]
+
+    App\DataFixtures\Processor\TaskProcessor:
+        tags: [{name: fidry_alice_data_fixtures.processor}]
