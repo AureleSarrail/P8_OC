@@ -1,4 +1,16 @@
 {
+    "dama/doctrine-test-bundle": {
+        "version": "4.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "4.0",
+            "ref": "56eaa387b5e48ebcc7c95a893b47dfa1ad51449c"
+        },
+        "files": [
+            "./config/packages/test/dama_doctrine_test_bundle.yaml"
+        ]
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -19,6 +31,9 @@
     },
     "doctrine/common": {
         "version": "2.12.0"
+    },
+    "doctrine/data-fixtures": {
+        "version": "1.4.2"
     },
     "doctrine/dbal": {
         "version": "v2.10.1"
@@ -65,6 +80,23 @@
     "egulias/email-validator": {
         "version": "2.1.17"
     },
+    "fzaninotto/faker": {
+        "version": "v1.9.1"
+    },
+    "hautelook/alice-bundle": {
+        "version": "2.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.1",
+            "ref": "71822522faf7ed2792d86b7f94ce73443358ccb9"
+        },
+        "files": [
+            "./config/packages/dev/hautelook_alice.yaml",
+            "./config/packages/test/hautelook_alice.yaml",
+            "./fixtures/.gitignore"
+        ]
+    },
     "incenteev/composer-parameter-handler": {
         "version": "v2.1.4"
     },
@@ -73,6 +105,22 @@
     },
     "monolog/monolog": {
         "version": "1.25.3"
+    },
+    "myclabs/deep-copy": {
+        "version": "1.9.5"
+    },
+    "nelmio/alice": {
+        "version": "3.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.2",
+            "ref": "0b9900ece737bec7752e4155c0164639dd9b0cb0"
+        },
+        "files": [
+            "./config/packages/dev/nelmio_alice.yaml",
+            "./config/packages/test/nelmio_alice.yaml"
+        ]
     },
     "php": {
         "version": "7.3"
@@ -101,8 +149,20 @@
     "sebastian/code-unit-reverse-lookup": {
         "version": "2.0.0"
     },
+    "sebastian/comparator": {
+        "version": "4.0.0"
+    },
+    "sebastian/diff": {
+        "version": "4.0.0"
+    },
     "sebastian/environment": {
         "version": "5.0.2"
+    },
+    "sebastian/exporter": {
+        "version": "4.0.0"
+    },
+    "sebastian/recursion-context": {
+        "version": "4.0.0"
     },
     "sebastian/version": {
         "version": "3.0.0"
@@ -113,7 +173,22 @@
     "swiftmailer/swiftmailer": {
         "version": "v6.2.3"
     },
+    "symfony/apache-pack": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "410b9325a37ef86f1e47262c61738f6202202bca"
+        },
+        "files": [
+            "./public/.htaccess"
+        ]
+    },
     "symfony/asset": {
+        "version": "v4.4.7"
+    },
+    "symfony/browser-kit": {
         "version": "v4.4.7"
     },
     "symfony/cache": {
@@ -141,13 +216,34 @@
     "symfony/contracts": {
         "version": "v1.1.8"
     },
+    "symfony/css-selector": {
+        "version": "v4.4.7"
+    },
     "symfony/debug": {
         "version": "v4.4.7"
+    },
+    "symfony/debug-bundle": {
+        "version": "4.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.1",
+            "ref": "f8863cbad2f2e58c4b65fa1eac892ab189971bea"
+        },
+        "files": [
+            "./config/packages/dev/debug.yaml"
+        ]
+    },
+    "symfony/debug-pack": {
+        "version": "v1.0.8"
     },
     "symfony/dependency-injection": {
         "version": "v4.4.7"
     },
     "symfony/doctrine-bridge": {
+        "version": "v4.4.7"
+    },
+    "symfony/dom-crawler": {
         "version": "v4.4.7"
     },
     "symfony/dotenv": {
@@ -347,6 +443,9 @@
             "./config/packages/test/swiftmailer.yaml"
         ]
     },
+    "symfony/test-pack": {
+        "version": "v1.0.6"
+    },
     "symfony/translation-contracts": {
         "version": "v2.0.1"
     },
@@ -414,6 +513,15 @@
     },
     "symfony/yaml": {
         "version": "v4.4.7"
+    },
+    "theofidry/alice-data-fixtures": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "fe5a50faf580eb58f08ada2abe8afbd2d4941e05"
+        }
     },
     "theseer/tokenizer": {
         "version": "1.1.3"
