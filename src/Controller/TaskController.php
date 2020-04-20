@@ -7,6 +7,8 @@ use App\Entity\User;
 use App\Form\TaskType;
 use App\Repository\TaskRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,6 +21,7 @@ class TaskController extends AbstractController
      * @Route("/tasks", name="task_list")
      * @param TaskRepository $repo
      * @return Response
+     * @Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")
      */
     public function listAction(TaskRepository $repo)
     {
@@ -31,6 +34,7 @@ class TaskController extends AbstractController
      * @param Request $request
      * @param EntityManagerInterface $em
      * @return RedirectResponse|Response
+     * @Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")
      */
     public function createAction(Request $request, EntityManagerInterface $em)
     {
@@ -60,6 +64,7 @@ class TaskController extends AbstractController
      * @param Request $request
      * @param EntityManagerInterface $em
      * @return RedirectResponse|Response
+     * @Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")
      */
     public function editAction(Task $task, Request $request, EntityManagerInterface $em)
     {
@@ -86,6 +91,7 @@ class TaskController extends AbstractController
      * @param Task $task
      * @param EntityManagerInterface $em
      * @return RedirectResponse
+     * @Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")
      */
     public function toggleTaskAction(Task $task, EntityManagerInterface $em)
     {
@@ -102,9 +108,11 @@ class TaskController extends AbstractController
      * @param Task $task
      * @param EntityManagerInterface $em
      * @return RedirectResponse
+     * @Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")
      */
     public function deleteTaskAction(Task $task, EntityManagerInterface $em)
     {
+        $this->denyAccessUnlessGranted('DELETE_TASK', $task, "Vous n'êtes pas le propriétaire de cette tâche !");
         $em->remove($task);
         $em->flush();
 
