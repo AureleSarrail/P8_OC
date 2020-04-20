@@ -44,9 +44,16 @@ class User implements UserInterface
     private $email;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $roles;
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Task", mappedBy="user")
      */
     private $tasks;
+
+
 
     public function __construct()
     {
@@ -95,7 +102,13 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        return array('ROLE_USER');
+        if (empty($this->roles)) {
+            $roles[] = 'ROLE_USER';
+        } else {
+            $roles[] = $this->roles;
+        }
+
+        return $roles;
     }
 
     public function eraseCredentials()
@@ -147,5 +160,13 @@ class User implements UserInterface
         }
 
         return $this;
+    }
+
+    /**
+     * @param mixed $roles
+     */
+    public function setRoles($roles): void
+    {
+        $this->roles = $roles;
     }
 }
