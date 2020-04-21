@@ -16,6 +16,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class User implements UserInterface
 {
+    const USERNAME_ANONYM = 'Anonymous';
+
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
@@ -114,6 +116,7 @@ class User implements UserInterface
 
     public function eraseCredentials()
     {
+        $this->plainPassword = null;
     }
 
     /**
