@@ -14,14 +14,18 @@ class UserTypeTest extends TypeTestCase
             'username' => 'test',
             'password' => array('first' => 'test', 'second' => 'test'),
             'email' => 'test@gmail.com',
-            'roles' => 'ROLE_ADMIN'
+            'roles' => [
+                'ROLE_ADMIN'
+            ]
         ];
 
         $formData2 = [
             'username' => 'test',
             'password' => 'test',
             'email' => 'test@gmail.com',
-            'roles' => 'ROLE_ADMIN'
+            'roles' => [
+                'ROLE_ADMIN'
+            ]
         ];
 
         $form = $this->factory->create(UserType::class);

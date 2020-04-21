@@ -128,4 +128,15 @@ class TaskControllerTest extends WebTestCase
         $this->assertSame(200, $client->getResponse()->getStatusCode());
         $this->assertSame(1, $crawler->filter('div.alert.alert-success')->count());
     }
+
+    public function testDeleteTaskActionDenied()
+    {
+        $client = static::createClient([], [
+            'PHP_AUTH_USER' => 'Xan2',
+            'PHP_AUTH_PW' => 'manson'
+        ]);
+        $client->request('GET', '/tasks/4/delete');
+
+        $this->assertSame(403, $client->getResponse()->getStatusCode());
+    }
 }
