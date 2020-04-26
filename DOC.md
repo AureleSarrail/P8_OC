@@ -1,6 +1,6 @@
 |Action|Path|
 |------|----|
-|homepage|/|
+|[homepage](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/homepage.md)|/|
 |login|/login|
 |login_check|/login_check|
 |logout|/logout|
