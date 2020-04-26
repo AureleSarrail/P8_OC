@@ -108,11 +108,10 @@ class TaskController extends AbstractController
      * @param Task $task
      * @param EntityManagerInterface $em
      * @return RedirectResponse
-     * @Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")
+     * @IsGranted("DELETE_TASK", subject="task")
      */
     public function deleteTaskAction(Task $task, EntityManagerInterface $em)
     {
-        $this->denyAccessUnlessGranted('DELETE_TASK', $task, "Vous n'êtes pas le propriétaire de cette tâche !");
         $em->remove($task);
         $em->flush();
 
