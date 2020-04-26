@@ -1,0 +1,14 @@
+|Action|Path|
+|------|----|
+|homepage|/|
+|login|/login|
+|login_check|/login_check|
+|logout|/logout|
+|task_list|/tasks|
+|task_create|/tasks/create|
+|task_edit|/tasks/{id}/edit|
+|task_toggle|/tasks/{id}/toggle|
+|task_delete|/tasks/{id}/delete|
+|user_list|/users|
+|user_create|/users/create|
+|user_edit|/users/{id}/edit|
