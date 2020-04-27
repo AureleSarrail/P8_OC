@@ -45,7 +45,9 @@ Coding Conventions
 ==================
 
 Please follow those standards when coding in order to keep the code clean :
+
 [PSR](https://www.php-fig.org/psr/)
+
 [Symfony Best Practices](https://symfony.com/doc/current/best_practices.html)
 
 Please be sure to use CodeClimate to validate your repo.
