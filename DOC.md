@@ -148,12 +148,14 @@ security:
 ```
 
 __Encoders__ : that lines tell to Symfony to use the Bcrypt algorithm to hash passwords.
+
 __Providers__ : Those lines tell to Symfony where to look for the user informations. Here it will be with the Class User and with the username attribute.
+
 __FireWalls__ : Here you will create some rules to tell how symfony will react in different environnements. Here, check the lines under the main firewall, specifically in form_login.
 That will indicate that the Security process is a login. the login_path indicate the Route Name where your form is. This is the most important.
 Default_target_path is where users will be redirected after the security process.
 
-Access_control is where you want to add some specifications for your urls. In this example, we tell to Symfony that the Url /login can be accessed by an Anonymous User.
+__Access_control__ is where you want to add some specifications for your urls. In this example, we tell to Symfony that the Url /login can be accessed by an Anonymous User.
 
 Now with this configuration, the Security Component can take the form informations, check if those informations are correct in database and if a user is existing.
 If all that is done, User informations are stored in Sessions and the User is authenticated.
