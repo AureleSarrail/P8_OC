@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/a9aa22b3b12014157a83/maintainability)](https://codeclimate.com/github/AureleSarrail/P8_OC/maintainability)
+
 ToDoList
 ========
 
