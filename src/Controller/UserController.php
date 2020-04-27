@@ -20,7 +20,7 @@ class UserController extends AbstractController
      * @Route("/users", name="user_list")
      * @param UserRepository $repo
      * @return Response
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("IS_ADMIN")
      */
     public function listAction(UserRepository $repo)
     {
@@ -34,7 +34,7 @@ class UserController extends AbstractController
      * @param EntityManagerInterface $em
      * @param UserPasswordEncoderInterface $encoder
      * @return RedirectResponse|Response
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("IS_ADMIN")
      */
     public function createAction(Request $request, EntityManagerInterface $em, UserPasswordEncoderInterface $encoder)
     {
@@ -66,7 +66,7 @@ class UserController extends AbstractController
      * @param UserPasswordEncoderInterface $encoder
      * @param EntityManagerInterface $em
      * @return RedirectResponse|Response
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("IS_ADMIN")
      */
     public function editAction(User $user, Request $request, UserPasswordEncoderInterface $encoder, EntityManagerInterface $em)
     {

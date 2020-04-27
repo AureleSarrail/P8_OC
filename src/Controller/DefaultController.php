@@ -10,7 +10,7 @@ class DefaultController extends AbstractController
 {
     /**
      * @Route("/", name="homepage")
-     * @IsGranted("ROLE_USER")
+     * @IsGranted("IS_CONNECT")
      */
     public function indexAction()
     {

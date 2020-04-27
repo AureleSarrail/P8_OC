@@ -2,23 +2,17 @@
 
 namespace App\Security\Voter;
 
-use App\Entity\Task;
-use App\Entity\User;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-class TaskDeleteVoter extends Voter
+class RolesVoter extends Voter
 {
-    /**
-     * @var Security
-     */
     private $security;
 
     public function __construct(Security $security)
     {
-
         $this->security = $security;
     }
 
@@ -26,8 +20,7 @@ class TaskDeleteVoter extends Voter
     {
         // replace with your own logic
         // https://symfony.com/doc/current/security/voters.html
-        return in_array($attribute, ['DELETE_TASK'])
-            && $subject instanceof Task;
+        return in_array($attribute, ["IS_CONNECT", "IS_ADMIN"]);
     }
 
     protected function voteOnAttribute($attribute, $subject, TokenInterface $token)
@@ -40,13 +33,14 @@ class TaskDeleteVoter extends Voter
 
         // ... (check conditions and return true to grant permission) ...
         switch ($attribute) {
-            case 'DELETE_TASK':
-                if ($user === $subject->getUser()) {
-                    return true;
-                } elseif ($this->security->isGranted('ROLE_ADMIN') && $subject->getUser()->getUsername() === User::USERNAME_ANONYM){
-                    return true;
-                }
+            case 'IS_CONNECT':
+                return true;
                 break;
+            case 'IS_ADMIN':
+                if ($this->security->isGranted("ROLE_ADMIN")) {
+                    return true;
+                    break;
+                }
         }
 
         return false;
