@@ -40,9 +40,10 @@ class TaskVoter extends Voter
         // ... (check conditions and return true to grant permission) ...
         switch ($attribute) {
             case 'IS_OWNER':
-                if ($user === $subject->getUser()) {
+                if($this->security->isGranted('ROLE_ADMIN') && $subject->getUser()->getUsername() === User::USERNAME_ANONYM){
                     return true;
-                } elseif ($this->security->isGranted('ROLE_ADMIN') && $subject->getUser()->getUsername() === User::USERNAME_ANONYM){
+                }
+                if ($user === $subject->getUser()) {
                     return true;
                 }
                 break;
