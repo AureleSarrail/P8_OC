@@ -1,20 +1,18 @@
 List of Paths
 =============
 
-|Action|Path|
-|------|----|
-|[homepage](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/homepage.md)|/|
-|[login](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/login.md)|/login|
-|[login_check](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/login_check.md)|/login_check|
-|[logout](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/logout.md)|/logout|
-|[task_list](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/task_list)|/tasks|
-|[task_create](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/task_create.md)|/tasks/create|
-|[task_edit](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/task_edit.md)|/tasks/{id}/edit|
-|[task_toggle](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/task_toggle.md)|/tasks/{id}/toggle|
-|[task_delete](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/task_delete.md)|/tasks/{id}/delete|
-|[user_list](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/user_list.md)|/users|
-|[user_create](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/user_create.md)|/users/create|
-|[user_edit](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/user_edit.md)|/users/{id}/edit|
+|Action|Path|Description|Security|
+|------|----|-----------|--------|
+|[homepage](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/homepage.md)|/|Display the Homepage|Authentified|
+|[login](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/login.md)|/login|Display the form Login|Anonymous|
+|[task_list](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/task_list)|/tasks|Display the list of all tasks|Authentified|
+|[task_create](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/task_create.md)|/tasks/create|Used to create a new Task|Authentified|
+|[task_edit](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/task_edit.md)|/tasks/{id}/edit|Used to edit an existing task|Authentified and Owner of task|
+|[task_toggle](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/task_toggle.md)|/tasks/{id}/toggle|Mark the task to finished|Authentified and Owner of the task|
+|[task_delete](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/task_delete.md)|/tasks/{id}/delete|Delete a task|Authentified and Owner of task|
+|[user_list](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/user_list.md)|/users|Display the list of users|Authentified and Admin|
+|[user_create](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/user_create.md)|/users/create|Used to create a new User|Authentified and Admin|
+|[user_edit](https://github.com/AureleSarrail/P8_OC/blob/master/Documentation/user_edit.md)|/users/{id}/edit|Used to edit an existing User|Authentified and Admin|
 
 
 Controllers
