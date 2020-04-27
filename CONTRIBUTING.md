@@ -3,21 +3,53 @@ How To Contribute ?
 
 If you want to contribute, please follow those instructions :
 
-Report a bug\Find a solution to a problem\Submit an Idea :
-==========================================================
+Create an Issue
+===============
 
-You can open an __Issue__ on the repository and we will talk about it to find a solution.
+First of all, you can create an issue.
+That issue will be discussed and can guide you in your future work.
 
-Contribute by developping a new function : 
-==========================================
+Fork The Project
+================
 
-You can fork the project and clone that __fork__.
-You can now work on it. Do __frequent commits__ and when it's ready, __push those changes__ to your fork.
+1- Fork the project with the __Fork__ Button on Github to your account.
 
-In order to be accepted, you must __write a bunch of tests with phpunit__ or __be sure that the existing tests are all ok__.
-You also must do a Code Climate analyze and be sure to __conserve an "A" for quality of code__.
+2- Clone that Forked Repository.
+```
+git clone https://github.com/<YOUR-USERNAME>/toDoList
+```
 
-When you are ready, open a pull request that will be analyzed.
+3- Create a new Remote in order that your project is up to date :
+```
+git remote add upstream https://github.com/AureleSarrail/P8_OC
+```
+
+4- Update your local projects with that new remote :
+```
+git pull upstream master
+```
+
+5- Make your changes to the code
+
+6- Write tests if needed and make changes to the documentation if needed
+
+7- Push your commits to your forked repository
+
+8- Open a pull request and target the original repository.
+
+Your contribution is now submitted and will be analyzed for a merge.
+
+Nb: Please follow the Coding Conventions below when developping
+
+Coding Conventions
+==================
+
+Please follow those standards when coding in order to keep the code clean :
+[PSR](https://www.php-fig.org/psr/)
+[Symfony Best Practices](https://symfony.com/doc/current/best_practices.html)
+
+Please be sure to use CodeClimate to validate your repo.
+
 
 Thanks for Contributing !
 =========================
